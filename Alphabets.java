@@ -1,63 +1,29 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
+class AlphabetString {
+    ArrayList<Character> arr = new ArrayList<Character>();
 
-public class Alphabets {
-
-
-    public static void main(String[] args) {
-
-        Scanner scan = new Scanner(System.in);
-        String toCheck = null;
-
-        while(true){
-
-            System.out.println("Enter the string to check, -1 to exit");
-            toCheck = scan.nextLine();
-            if(toCheck.equals("-1")){
-                break;
-            }
-
-            boolean isPresent[] = new boolean[26];
-            boolean flag = true;
-
-            // if string is less than 26 characters
-            if(toCheck.length()<26){
-                flag=false;
-                System.out.println("Does not contain all the alphabets!");
-                continue;
-            }
-
-
-            //Assigns boolean value true to indices for corresponding alphabets
-            for(int i=0;i<toCheck.length();i++){
-                char character = toCheck.charAt(i);
-                int val = (int) character;
-                if(val>64 && val <91){
-                    isPresent[val-65]=true;
-                }
-                else if(val>96 && val<123){
-                    isPresent[val-97]=true;
-                }
-            }
-
-            // Checks if all the alphabets are present
-            for(int i=0;i<26;i++){
-                if(isPresent[i]){
-                    flag=true;
-                }
-                else{
-                    flag=false;
-                    break;
-                }
-            }
-            if(flag){
-                System.out.println("Contains all the alphabets!");
-            }
-            else{
-                System.out.println("Does not contain all the alphabets!");
+    public AlphabetString(String inputString) {
+        inputString = inputString.toUpperCase();
+        for (int i = 0; i < inputString.length(); i++) {
+            if (!arr.contains(inputString.charAt(i))) {
+                arr.add(inputString.charAt(i));
             }
         }
-        scan.close();
+        if (arr.size() == 26) {
+            System.out.println("contains all letters in String");
+        } else {
+            System.out.println("Do not contain all letters");
+        }
     }
+}
 
+public class Alphabets {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String inputString = sc.nextLine();
+        new AlphabetString(inputString);
+        sc.close();
+    }
 }
