@@ -1,0 +1,5 @@
+Character a occurred 3 times.
+Character b occurred 3 times.
+Character c occurred 3 times.
+Character s occurred 3 times.
+Character d occurred 3 times.
