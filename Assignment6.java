@@ -57,12 +57,10 @@ class Overloaded {
 }
 
 // part 3
-class ArrayObject {
-    String inputArgument;
+class Task3 {
 
-    ArrayObject(String input) {
-        this.inputArgument = input;
-        System.out.println("Initialized Message with argument " + inputArgument);
+    Task3(String s) {
+        System.out.println(s);
     }
 }
 
@@ -76,19 +74,19 @@ public class Assignment6 {
                 vampireNumbers.add(i);
         for(int i=0;i<vampireNumbers.size();i++)
             System.out.println("Vampire number "+(i+1)+" is "+vampireNumbers.get(i));
+
         // Part 2
         // Overloaded overloaded = new Overloaded();
         //
-        // ArrayObject[] objects = new ArrayObject[5];
+
+
         //// part 3
-        //// prints null as objects
-        // for(int index = 0; index < objects.length ;index ++)
-        // System.out.println(objects[index]);
-        //
+        //// Nothing was printed when objects were not created.
+
         //// part 4
-        //// prints initialized constructor message
-        // for(int index = 0; index < objects.length ;index ++)
-        // objects[index] = new ArrayObject("Object "+index);
+        //arr[0] = new Task3("hello");
+        //arr[1] = new Task3("Hi");
+        //arr[2] = new Task3("hey");
 
     }
 }
